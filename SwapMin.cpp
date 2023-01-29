@@ -8,15 +8,11 @@ void swap_min(int (*m)[r], unsigned rows, unsigned cols){
     int min = m[0][0];
     int lowestNumRow = 0;
     for (int i = 0; i < rows; ++i) {
-        int minCurrent = min;
         for (int j = 0; j < cols; ++j) {
-            if(minCurrent > m[i][j]){
-                minCurrent = m[i][j];
+            if(min > m[i][j]){
+                min = m[i][j];
                 lowestNumRow = i;
             }
-        }
-        if(minCurrent < min){
-            min = minCurrent;
         }
     }
     swap(m[0],m[lowestNumRow]);
