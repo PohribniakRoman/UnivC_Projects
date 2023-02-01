@@ -42,6 +42,7 @@ int main(){
     swap_min(arr, rows, cols);
     cout << "After refactor: \n";
     visualize(arr, cols, cols);
+    delete [] arr;
     return 0;
 }
 
