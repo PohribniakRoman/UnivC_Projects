@@ -38,10 +38,10 @@ int main(){
         }
     }
     cout << "Before refactor: \n";
-    visualize(arr, cols, cols);
+    visualize(arr, rows, cols);
     swap_min(arr, rows, cols);
     cout << "After refactor: \n";
-    visualize(arr, cols, cols);
+    visualize(arr, rows, cols);
     delete [] arr;
     return 0;
 }
