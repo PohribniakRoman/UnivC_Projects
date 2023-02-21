@@ -12,6 +12,7 @@ vector<int> decToBinary(int n){
     }
     return number;
 }
+
 vector<int> fractToBinary(double n,int len){
     vector<int> res;
     for (int i = 0; n != 0; ++i) {
@@ -61,16 +62,29 @@ public:
             cout << "|";
             this->visualize(significant);
         }else{
-
+            cout << "0|00000000|0|000000000000\n";
         }
     }
 };
 
 
 int main(){
+    cout << "s - sign ; e - exponents bits ; i - implicit bit ; m - mantissa bits\n";
+    cout << "1\t:  s|hhhhhhhh|i|mmmmmmmmmmmm - What number is it\n";
+    cout << "2\t :  0|11111111|1|000000000000 - Positive infinity\n";
+    cout << "3\t :  1|11111111|1|000000000000 - Negative infinity\n";
+    cout << "4\t :  0|00000000|0|000000000000 - Zero\n";
+    cout << "5\t :  0|00000001|1|000000000000 - Minimal absolute value\n";
+    cout << "6\t :  0|11111110|1|111111111111 - Max positive \n";
+    cout << "7\t :  1|11111110|1|111111111111 - Min negative \n";
+    cout << "8\t :  0|01111111|1|000000000000 - One \n";
+    cout << "9\t :  1|00000000|1|111111111111 - Not normalized\n";
+    cout << "10\t : 0|11111111|1|100111100111 - Not a number \n";
+    cout << "Please, enter your x value: ";
     Float FloatConstructor;
     double x;
     cin >>x;
+    cout << "Float number is: ";
     FloatConstructor.toFloat(x);
   return 0;
 }
