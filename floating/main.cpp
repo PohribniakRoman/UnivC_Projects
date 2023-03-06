@@ -18,8 +18,8 @@ vector<int> fractToBinary(double n,int len){
     for (int i = 0; n != 0; ++i) {
         if(i == len)return res;
         n *= 2;
-        res.push_back(::floor(n));
-        n -= ::floor(n);
+        res.push_back(floor(n));
+        n -= floor(n);
     }
     while(res.size() != 12){
         res.push_back(0);
