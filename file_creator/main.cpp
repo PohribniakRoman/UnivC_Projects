@@ -1,17 +1,29 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 using namespace std;
 
 int main() {
     ifstream file ("index.txt");
-    file.seekg(0,ios_base::end);
-    int n = file.tellg();
-    file.seekg(n,ios_base::end);
-    cout << n << "\n";
-    char* buffer=new char[n+1]; buffer[n]=0;
-    file.read(buffer,n);
-    cout<< buffer;
-    delete [] buffer;
+    vector<string> Data;
+    char ch;
+    int s = 0;
+    while (file.get(ch)){
+        if(ch == '\n'){
+            s++;
+        }else{
+            if(Data.size() > s){
+                Data[s].push_back(ch);
+            } else{
+                string newElement = "";
+                newElement.push_back(ch);
+                Data.push_back(newElement);
+            }
+        }
+    }
+    for (int q = 0; q < Data.size(); ++q) {
+        cout << Data[q] << "\n";
+    }
     return 0;
 }
